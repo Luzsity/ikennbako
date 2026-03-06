@@ -16,9 +16,14 @@ const Layout: FC<{ title: string; children: Child }> = ({ title, children }) => 
           min-height: 100vh;
         }
         .container {
-          max-width: 640px;
+          max-width: 720px;
           margin: 0 auto;
           padding: 2rem 1rem;
+        }
+        @media (min-width: 768px) {
+          .container { padding: 3rem 2rem; }
+          h1 { font-size: 1.75rem; }
+          .card { padding: 2rem; }
         }
         h1 {
           font-size: 1.5rem;
