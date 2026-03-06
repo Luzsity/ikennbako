@@ -153,7 +153,7 @@ const Layout: FC<{ title: string; children: Child }> = ({ title, children }) => 
 
         /* Buttons */
         .btn {
-          display: inline-flex;
+          display: flex;
           align-items: center;
           justify-content: center;
           padding: 0.75rem 1.5rem;
