@@ -5,4 +5,4 @@ compatibility_date = "2025-03-01"
 [[d1_databases]]
 binding = "DB"
 database_name = "ikennbako-db"
-database_id = "ikennbako"
+database_id = "6b329d18-6948-4793-890a-0e685b095b72"
