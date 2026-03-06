@@ -11,7 +11,7 @@ export async function notifyDiscord(webhookUrl: string | undefined, body: string
         embeds: [{
           title: '新しい意見が届きました',
           description: truncated,
-          color: 0x4a90d9,
+          color: 0x6366f1,
           timestamp: new Date().toISOString(),
         }],
       }),
