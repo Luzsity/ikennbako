@@ -131,7 +131,10 @@ const Layout: FC<{ title: string; children: Child }> = ({ title, children }) => 
           text-align: center;
         }
         textarea, input[type="password"] {
+          display: block;
           width: 100%;
+          margin-left: auto;
+          margin-right: auto;
           padding: 0.75rem 1rem;
           border: 1px solid var(--color-border);
           border-radius: var(--radius-md);
