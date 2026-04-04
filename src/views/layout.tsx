@@ -141,7 +141,7 @@ const Layout: FC<{ title: string; children: Child }> = ({ title, children }) => 
           font-size: 1rem;
           font-family: inherit;
           line-height: 1.6;
-          resize: vertical;
+          resize: none;
           background: var(--color-bg);
           color: var(--color-text);
           transition: border-color var(--transition), box-shadow var(--transition);
