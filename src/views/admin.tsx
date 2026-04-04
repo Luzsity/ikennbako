@@ -7,6 +7,17 @@ type Opinion = {
   created_at: string
 }
 
+function formatDate(raw: string): string {
+  const d = new Date(raw)
+  if (isNaN(d.getTime())) return raw
+  const y = d.getFullYear()
+  const m = d.getMonth() + 1
+  const day = d.getDate()
+  const h = String(d.getHours()).padStart(2, '0')
+  const min = String(d.getMinutes()).padStart(2, '0')
+  return `${y}年${m}月${day}日 ${h}:${min}`
+}
+
 export const LoginPage: FC<{ error?: string }> = ({ error }) => (
   <Layout title="管理者ログイン - 意見箱">
     <div class="page-wrapper">
@@ -44,7 +55,12 @@ export const AdminPage: FC<{ opinions: Opinion[] }> = ({ opinions }) => (
     <div class="container--wide">
       <div class="admin-header">
         <h1 class="admin-header__title">管理画面</h1>
-        <span class="stats-badge">{opinions.length} 件</span>
+        <div class="admin-actions">
+          <span class="stats-badge">{opinions.length} 件</span>
+          <form method="post" action="/api/admin/logout" style="margin: 0">
+            <button class="btn btn--logout" type="submit">ログアウト</button>
+          </form>
+        </div>
       </div>
       {opinions.length === 0 ? (
         <div class="empty-state">
@@ -57,8 +73,9 @@ export const AdminPage: FC<{ opinions: Opinion[] }> = ({ opinions }) => (
             <div class="opinion-card" key={op.id}>
               <p class="opinion-card__body">{op.body}</p>
               <div class="opinion-card__meta">
-                <span>{op.created_at}</span>
-                <form method="post" action={`/api/admin/opinions/${op.id}/delete`} style="margin: 0">
+                <span>{formatDate(op.created_at)}</span>
+                <form method="post" action={`/api/admin/opinions/${op.id}/delete`} style="margin: 0"
+                  onsubmit="return confirm('この意見を削除しますか？')">
                   <button class="btn btn--danger" type="submit">削除</button>
                 </form>
               </div>
