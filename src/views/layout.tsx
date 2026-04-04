@@ -64,6 +64,9 @@ const Layout: FC<{ title: string; children: Child }> = ({ title, children }) => 
         .container--narrow.container--login {
           max-width: 400px;
         }
+        .container--login label {
+          text-align: left;
+        }
         .container--wide {
           width: 100%;
           max-width: 720px;
@@ -125,6 +128,7 @@ const Layout: FC<{ title: string; children: Child }> = ({ title, children }) => 
           font-weight: 600;
           color: var(--color-text);
           margin-bottom: 0.5rem;
+          text-align: center;
         }
         textarea, input[type="password"] {
           width: 100%;
@@ -149,6 +153,7 @@ const Layout: FC<{ title: string; children: Child }> = ({ title, children }) => 
           font-size: 0.8rem;
           color: var(--color-text-muted);
           margin-top: 0.4rem;
+          text-align: center;
         }
 
         /* Buttons */
