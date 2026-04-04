@@ -315,8 +315,9 @@ const Layout: FC<{ title: string; children: Child }> = ({ title, children }) => 
 
         /* Back link */
         .back-link {
-          display: inline-flex;
+          display: flex;
           align-items: center;
+          justify-content: center;
           gap: 0.35rem;
           color: var(--color-text-secondary);
           text-decoration: none;
@@ -325,6 +326,28 @@ const Layout: FC<{ title: string; children: Child }> = ({ title, children }) => 
           transition: color var(--transition);
         }
         .back-link:hover { color: var(--color-primary); }
+
+        /* Admin actions */
+        .admin-actions {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+        .btn--logout {
+          background: transparent;
+          color: var(--color-text-secondary);
+          border: 1px solid var(--color-border);
+          padding: 0.3rem 0.85rem;
+          font-size: 0.8rem;
+          border-radius: var(--radius-sm);
+          width: auto;
+          margin: 0;
+        }
+        .btn--logout:hover {
+          color: var(--color-text);
+          border-color: var(--color-border-hover);
+          background: rgba(0,0,0,0.03);
+        }
       `}</style>
     </head>
     <body>

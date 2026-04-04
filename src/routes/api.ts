@@ -34,6 +34,12 @@ api.post('/admin/login', async (c) => {
   return c.redirect('/admin')
 })
 
+// Admin logout
+api.post('/admin/logout', (c) => {
+  c.header('Set-Cookie', 'admin_token=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0')
+  return c.redirect('/admin')
+})
+
 // Get opinions (JSON)
 api.get('/admin/opinions', authMiddleware, async (c) => {
   const { results } = await c.env.DB.prepare(
