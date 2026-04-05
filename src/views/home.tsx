@@ -33,6 +33,7 @@ const Home: FC<{ message?: string; error?: string }> = ({ message, error }) => (
               required
               minLength={1}
               maxLength={2000}
+              style="width:100%;min-width:100%;max-width:100%;box-sizing:border-box"
             />
             <p class="input-hint">最大 2,000 文字</p>
             <button class="btn btn--primary" type="submit">匿名で送信</button>
