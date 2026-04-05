@@ -28,7 +28,7 @@ const Home: FC<{ message?: string; error?: string }> = ({ message, error }) => (
             <textarea
               id="body"
               name="body"
-              rows={6}
+              rows={10}
               placeholder="ここに意見を入力..."
               required
               minLength={1}
